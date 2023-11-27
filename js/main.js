@@ -37,11 +37,11 @@ let jobCards = [
 
 for (let i = 0; i < teamMembers.length; i++){
 
-   document.getElementById("team_cards").innerHTML += `
+   document.getElementById("job_cards").innerHTML += `
    <div class="card text-center card-w col-4 mb-3 p-cards" >
-        <img src="./img/cabin.png" class="card-img-top" alt="Cabin">
+        <img src="./img/${jobCards[i].photo}" class="card-img-top" alt="Cabin">
         <div class="card-body">
-            <h5 class="card-title">${}</h5>
+            <h5 class="card-title">${jobCards[i].name}</h5>
             <a href="#" class="btn btn-info">Preview</a>
             <a href="#" class="btn btn-outline-info">Visit site</a>
         </div>
