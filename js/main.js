@@ -6,7 +6,6 @@
 function calcPriceWork(event) {
     event.preventDefault();
 
-    console.log("IL FORM FUNZIONA!");
     // inizio collegando le informazione da inserire nel form su html a js 
 
     let name = document.getElementById("name").value;
@@ -44,4 +43,30 @@ function calcPriceWork(event) {
     document.getElementById("first_name").innerHTML= name;
     document.getElementById("last_name").innerHTML= surname;
     document.getElementById("email_address").innerHTML= email;
+
+
+    //faccio si che l'utente possa utilizzare dei  codici sconto
+    // inizio con 1 codice che deve essere del 25%
+    // verificato che il codice funziona provare a far si che non possa essere usato 2 volte
+    
+    let discountCodeList = ["YHDNU32","JANJC63","PWKCN25","SJDPO96","POCIE24"];
+
+    let discountCodeUsed = false;
+        for(let i = 0; i < discountCodeList.length && discountCodeUsed == false; i++) {
+            if(discountCodeList[i] == discountCode) {
+                let discountedPrice = finalPrice - (finalPrice * 20 / 100);
+
+                document.getElementById("work_price").innerHTML = discountedPrice.toFixed(2);
+                discountCodeUsed = true;
+            } else {
+                document.getElementById("work_price").innerHTML= finalPrice;
+            }
+        }
+
+        if(discountCodeUsed == true) {
+            alert("questo codice è già stato usato");
+        } else {
+            alert("codice valido");
+        }
+    
 }
