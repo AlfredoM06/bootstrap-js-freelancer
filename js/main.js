@@ -1,7 +1,54 @@
 //devo continuare da dove mi sono fermato con l'altro test, devo inserire dei prezzi in base alle ore richieste devo fare 
 // in modo che al click del send si compili il form e si calcoli il prezzo con i dati inseriti e dare la possibilità di applicare 
 // sconti 
+let jobCards = [
+    {
+       photo: "img/cabin.png",
+       name: "Cabin Website",
+       
+   },
+   {
+       photo: "img/cake.png",
+       name: "Cake Website",
+      
+   },
+   {
+       photo: "img/circus.png",
+       name: "Circus Website",
+      
+   },
+   {
+       photo: "img/game.png",
+       name: "Game Website",
+      
+   },
+   {
+       photo: "img/safe.png",
+       name: "Safe Website",
+       
+   },
+   {
+       photo: "img/submarine.png",
+       name: "Submarine Website",
+       
+   },
+];
 
+
+for (let i = 0; i < teamMembers.length; i++){
+
+   document.getElementById("team_cards").innerHTML += `
+   <div class="card text-center card-w col-4 mb-3 p-cards" >
+        <img src="./img/cabin.png" class="card-img-top" alt="Cabin">
+        <div class="card-body">
+            <h5 class="card-title">${}</h5>
+            <a href="#" class="btn btn-info">Preview</a>
+            <a href="#" class="btn btn-outline-info">Visit site</a>
+        </div>
+    </div>
+   `
+
+}
 //creo una funzione oer far si che al click del bottone si verifichi il submitdel form
 function calcPriceWork(event) {
     event.preventDefault();
@@ -67,7 +114,7 @@ function calcPriceWork(event) {
         }
     }
 
-    if (discountCodeFound) {
+    if (discountCodeFound == true) {
         discountCodeList.splice(discountCodeIndex, 1);
     }
 
