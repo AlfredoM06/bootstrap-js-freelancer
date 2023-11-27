@@ -101,17 +101,17 @@
                             </div>  
                         </div>
                             
-                        <form class="row g-5 bg-info">
+                        <form class="row g-5 bg-info" onsubmit="calcPriceWork(event)">
                             <div class="col-6">
-                                <label for="inputFirstName" class="form-label"> First name </label>
+                                <label for="inputFirstName" class="form-label" id="first_name"> First name </label>
                                 <input type="text" class="form-control" id="name" placeholder="Enter your first name..." aria-label=" First name">
                                 </div>
                                 <div class="col-6">
-                                <label for="inputLastName" class="form-label"> Last name </label>
+                                <label for="inputLastName" class="form-label" id="last_name"> Last name </label>
                                 <input type="text" class="form-control" id="surname" placeholder="Enter your last name..." aria-label="Last name">
                             </div>
                             <div class="col-6">
-                                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                                <label for="exampleFormControlInput1" class="form-label" id="email_address">Email address</label>
                                 <input type="email" class="form-control" id="email" placeholder="name@example.com">
                             </div>
                             <div class="col-6">
@@ -120,7 +120,7 @@
                             </div>
                             <div class="col-6">
                                 <label for="inputTypeWork" class="form-label"> Type of work </label>
-                                <select  id="inputTypeWork" class="form-select">
+                                <select  id="input_type_work" class="form-select">
                                     <option selected value="0"> Select the type of work </option>
                                     <option value="1"> Backend Development </option>
                                     <option value="2"> Frontend Development</option>
@@ -138,6 +138,7 @@
                             <div class="col-12 text-center">
                                 <button type="submit" id="btn" class="btn btn-warning">Send</button>
                             </div>
+                            <p id="work_price"></p>
                         </form>
 
                     </div>
