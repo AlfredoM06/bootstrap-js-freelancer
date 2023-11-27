@@ -50,23 +50,32 @@ function calcPriceWork(event) {
     // verificato che il codice funziona provare a far si che non possa essere usato 2 volte
     
     let discountCodeList = ["YHDNU32","JANJC63","PWKCN25","SJDPO96","POCIE24"];
+    let discountCodeIndex = -1;
+    let discountCodeFound = false;
 
-    let discountCodeUsed = false;
-        for(let i = 0; i < discountCodeList.length && discountCodeUsed == false; i++) {
-            if(discountCodeList[i] == discountCode) {
-                let discountedPrice = finalPrice - (finalPrice * 20 / 100);
+    for(let i = 0; i < discountCodeList.length && discountCodeFound == false; i++) {
+        if(discountCodeList[i] == discountCode) {
+            let discountedPrice = finalPrice - (finalPrice * 20 / 100);
 
-                document.getElementById("work_price").innerHTML = discountedPrice.toFixed(2);
-                discountCodeUsed = true;
-            } else {
-                document.getElementById("work_price").innerHTML= finalPrice;
-            }
-        }
+            document.getElementById("work_price").innerHTML = discountedPrice.toFixed(2);
+            discountCodeFound = true;
+            discountCodeIndex = i;
 
-        if(discountCodeUsed == true) {
-            alert("questo codice è già stato usato");
+
         } else {
-            alert("codice valido");
+            document.getElementById("work_price").innerHTML= finalPrice;
         }
+    }
+
+    if (discountCodeFound) {
+        discountCodeList.splice(discountCodeIndex, 1);
+    }
+
+
+    if(discountCodeFound == true) {
+        alert("questo codice è valido");
+    } else {
+        alert("codice scono NON valido");
+    }
     
 }
