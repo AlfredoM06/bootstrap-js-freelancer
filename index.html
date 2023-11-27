@@ -104,42 +104,42 @@
                         <form class="row g-5 bg-info">
                             <div class="col-6">
                                 <label for="inputFirstName" class="form-label"> First name </label>
-                                <input type="text" class="form-control" placeholder="Enter your first name..." aria-label=" First name">
+                                <input type="text" class="form-control" id="name" placeholder="Enter your first name..." aria-label=" First name">
                                 </div>
                                 <div class="col-6">
                                 <label for="inputLastName" class="form-label"> Last name </label>
-                                <input type="text" class="form-control" placeholder="Enter your last name..." aria-label="Last name">
+                                <input type="text" class="form-control" id="surname" placeholder="Enter your last name..." aria-label="Last name">
                             </div>
                             <div class="col-6">
                                 <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                <input type="email" class="form-control" id="email" placeholder="name@example.com">
                             </div>
                             <div class="col-6">
                                 <label for="inputHours" class="form-label"> Hours requested </label>
-                                <input type="text" class="form-control" placeholder="Hours requested..." aria-label="Hours requested">
+                                <input type="text" class="form-control" id="hours" placeholder="Hours requested..." aria-label="Hours requested">
                             </div>
                             <div class="col-6">
                                 <label for="inputTypeWork" class="form-label"> Type of work </label>
                                 <select  id="inputTypeWork" class="form-select">
-                                    <option selected> Select the type of work </option>
-                                    <option> Cabin Website </option>
-                                    <option> Cake Website </option>
-                                    <option> Circus Website </option>
-                                    <option> Game Website </option>
-                                    <option> Safe Website </option>
-                                    <option> Submarine Website </option>
+                                    <option selected value="0"> Select the type of work </option>
+                                    <option value="1"> Cabin Website </option>
+                                    <option value="2"> Cake Website </option>
+                                    <option value="3"> Circus Website </option>
+                                    <option value="4"> Game Website </option>
+                                    <option value="5"> Safe Website </option>
+                                    <option value="6"> Submarine Website </option>
                                 </select>
                             </div>
                             <div class="col-6">
                                 <label for="inputCode" class="form-label">Discount  Code </label>
-                                <input type="text" class="form-control" id="inputCode">
+                                <input type="text" id="discount_code" class="form-control" id="inputCode">
                             </div>
                             <div class="col-12">
                                 <label for="inputTextarea" class="form-label">Message</label>
                                 <textarea class="form-control" id="inputTextarea" rows="3" placeholder="Specify your work commission..." aria-label="Text area"></textarea>
                             </div>
                             <div class="col-12 text-center">
-                                <button type="submit" class="btn btn-warning">Send</button>
+                                <button type="submit" id="btn" class="btn btn-warning">Send</button>
                             </div>
                         </form>
 
