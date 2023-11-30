@@ -3,39 +3,40 @@
 // sconti 
 let jobCards = [
     {
-       photo: "img/cabin.png",
+       photo: "cabin.png",
        name: "Cabin Website",
        
    },
    {
-       photo: "img/cake.png",
+       photo: "cake.png",
        name: "Cake Website",
       
    },
    {
-       photo: "img/circus.png",
+       photo: "circus.png",
        name: "Circus Website",
       
    },
    {
-       photo: "img/game.png",
+       photo: "game.png",
        name: "Game Website",
       
    },
    {
-       photo: "img/safe.png",
+       photo: "safe.png",
        name: "Safe Website",
        
    },
    {
-       photo: "img/submarine.png",
+       photo: "submarine.png",
        name: "Submarine Website",
        
    },
 ];
 
 
-for (let i = 0; i < teamMembers.length; i++){
+
+for (let i = 0; i < jobCards.length; i++){
 
    document.getElementById("job_cards").innerHTML += `
    <div class="card text-center card-w col-4 mb-3 p-cards" >
@@ -49,6 +50,8 @@ for (let i = 0; i < teamMembers.length; i++){
    `
 
 }
+
+let discountCodeList = ["YHDNU32","JANJC63","PWKCN25","SJDPO96","POCIE24"];
 //creo una funzione oer far si che al click del bottone si verifichi il submitdel form
 function calcPriceWork(event) {
     event.preventDefault();
@@ -96,7 +99,7 @@ function calcPriceWork(event) {
     // inizio con 1 codice che deve essere del 25%
     // verificato che il codice funziona provare a far si che non possa essere usato 2 volte
     
-    let discountCodeList = ["YHDNU32","JANJC63","PWKCN25","SJDPO96","POCIE24"];
+   
     let discountCodeIndex = -1;
     let discountCodeFound = false;
 
@@ -122,7 +125,8 @@ function calcPriceWork(event) {
     if(discountCodeFound == true) {
         alert("questo codice è valido");
     } else {
-        alert("codice scono NON valido");
+        alert("codice sconto NON è valido");
+        document.getElementById("discount_code").classList.add('text-danger');
     }
     
 }
